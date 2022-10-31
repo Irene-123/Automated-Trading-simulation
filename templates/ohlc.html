@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      
+      {% load static %}
+      
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/ohlc.css' %}" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    </head>
+    <body>
+      <nav class="nav-extended blue-grey darken-4">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">ETrader</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+    
+            <li><a href="badges.html">Login/Signup</a></li>
+         
+          </ul>
+        </div>
+        
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+            
+            <li class="tab"><a class="active" href="#test2">Home</a></li>
+            <li class="tab"><a href="#test1">Sockets data</a></li>
+            <li class="tab"><a href="#test1">Simulator/Backtesting</a></li>
+
+            <!-- <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+            <li class="tab"><a href="#test4">Test 4</a></li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <table id="table" class="display" style="width: 100%;">
+        <thead>
+          <tr>
+            {% for header in headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for t in data %}
+                            <tr>
+                                <th class="center-align" scope="row">     </th>
+
+                                <td class="center-align">{{t.Datetime}}</td>
+                                <td class="center-align">{{t.Open}}</td>
+                                <td class="center-align">{{t.High}}</td>
+                                <td class="center-align">{{t.Low}}</td>
+                                <td class="center-align">{{t.Close}} </td>
+                                <td class="center-align">{{t.Volume}}</td>
+
+                            </tr>
+                            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+      
+      
+
+<!-- 
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+  <footer class="page-footer blue-grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Trading & Simulation</h5>
+          <p class="grey-text text-lighten-4">We provide simulation/backtesting of your trading strategy</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Follow us on</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+
+
+    </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      {% load static %}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    </head>
+    <body>
+      <nav class="nav-extended blue-grey darken-4">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">ETrader</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+    
+            <li><a href="badges.html">Login/Signup</a></li>
+         
+          </ul>
+        </div>
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+            
+            <li class="tab"><a class="active" href="#test2">Home</a></li>
+            <li class="tab"><a href="#test1">Sockets data</a></li>
+            <li class="tab"><a href="#test1">Simulator/Backtesting</a></li>
+
+            <!-- <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+            <li class="tab"><a href="#test4">Test 4</a></li> -->
+          </ul>
+        </div>
+      </nav>
+    
+      
+        <div class="front-page" >
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Trade</span>
+                  <p>Trades directly with already existing historical data in the database, and shows the results. </p>
+                </div>
+                <div class="card-action">
+                  <a href="/ohlc">Trade</a>
+                  
+                </div>
+              </div>
+            </div>
+          
+            <div class="col s12 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Get new historical data and trade</span>
+                  <p>Fetches new historical data based on parameters and trades.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Get historical data. </a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                  
+
+<!-- <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Trade with previous historical data</a>
+<a class="waves-effect waves-light btn-large"><i class="material-icons right">cloud</i>Get new historical data and trade</a>
+        
+         -->
+  <!-- <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+          <label for="disabled">Disabled</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          This is an inline input field:
+          <div class="input-field inline">
+            <input id="email_inline" type="email" class="validate">
+            <label for="email_inline">Email</label>
+            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div> -->
+
+
+  
+  <footer class="page-footer blue-grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Trading & Simulation</h5>
+          <p class="grey-text text-lighten-4">We provide simulation/backtesting of your trading strategy</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Follow us on</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+
+
+    </body>
+</html>
