@@ -2,21 +2,21 @@
 
 <html>
     <head>
-      
       {% load static %}
-      
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/ohlc.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+   
+    
+
     </head>
     <body>
-      <nav class="nav-extended blue-grey darken-4">
+       <nav class="nav-extended blue-grey darken-4">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">  ETrader</a>
+          <a href="#" class="brand-logo">ETrader</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
     
@@ -24,7 +24,6 @@
          
           </ul>
         </div>
-        
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
             
@@ -37,54 +36,68 @@
           </ul>
         </div>
       </nav>
-      
-      <div class="row">
-        <div class="" style="margin: auto;width: 50%;padding: 10px;">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text ">
-              <span class="card-title">Trade</span>
-              <p>Shows the results from automated trading and plots the graph</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Trade</a>
-            
+
+      <div style="margin: auto; width: 50%; padding: 10px;" >
+        <form action="/formdata/" method="GET" class="col s12">
+            {% csrf_token %} 
+            {{form}}
+            {% for key, value in form.CHOICES.choices %}
+                <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+     
+ <!-- <div style="margin: auto;width: 50%;padding: 10px;">   
+  <div class="row">
+    <form action="/formdata/" method='POST' class="col s12">
+        {% csrf_token %}
+        {{form }}
+        <div class="row">
+            <div class="input-field col s12">
+              <input disabled value="N" id="exchange" type="text" class="validate">
+              <label for="exchange">Exchange</label>
             </div>
           </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Type C for quick testing" id="exchangeType" type="text" class="validate">
+          <label for="exchangeType">Exchange Type</label>
         </div>
+        <div class="input-field col s6">
+          <input placeholder="Type 1660 for quick testing" id="scripCode" type="text" class="validate">
+          <label for="scripCode">Scrip Code</label>
+        </div>
+      
+    
+    
+        <div >
+        <label>Select the Time Frame</label>
+        <select class="browser-default" id="country" name="country">
+          <option value="1m">1m</option>
+          <option value="5m">5m</option>
+          <option value="10m">10m</option>
+          <option value="15m">15m</option>
+          <option value="30m">30m</option>
+          <option value="60m">60m</option>
+          <option value="1d">1d</option>
+        </select>
       </div>
-      
+        <label for="startdate">Start date:</label>
+        <input type="date" id="startdate" name="startdate">
+        <label for="enddate">End date:</label>
+        <input type="date" id="enddate" name="enddate">    
+  
+      </div>
+      <input type="submit" value="submit">
+    </form>
+   
+  </div>
+  </div> -->
 
-      <table id="table" >
-        <thead>
-          <tr>
-            {% for header in headers %}
-            <th>{{ header }}</th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {% for t in data %}
-                            <tr>
-                                <th  scope="row">     </th>
+  
 
-                                <td >{{t.Datetime}}</td>
-                                <td >{{t.Open}}</td>
-                                <td>{{t.High}}</td>
-                                <td >{{t.Low}}</td>
-                                <td>{{t.Close}} </td>
-                                <td>{{t.Volume}}</td>
-
-                            </tr>
-                            {% endfor %}
-          </tr>
-        </tbody>
-      </table>
-      
-      
-
-<!-- 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
   <footer class="page-footer blue-grey darken-4">
     <div class="container">
       <div class="row">
