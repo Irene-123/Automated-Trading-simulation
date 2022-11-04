@@ -2,11 +2,9 @@
 
 <html>
     <head>
-      
       {% load static %}
-      
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/ohlc.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
@@ -16,7 +14,7 @@
     <body>
       <nav class="nav-extended blue-grey darken-4">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">  ETrader</a>
+          <a href="#" class="brand-logo">ETrader</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
     
@@ -24,7 +22,6 @@
          
           </ul>
         </div>
-        
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
             
@@ -37,54 +34,46 @@
           </ul>
         </div>
       </nav>
+      <h5> The plot is yet to be displayed on the web page, head over to the command line please. Thank you!</h5>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <!-- <img src="{% static 'plot.png'%}" alt=""> -->
+    
       
-      <div class="row">
-        <div class="" style="margin: auto;width: 50%;padding: 10px;">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text ">
-              <span class="card-title">Trade</span>
-              <p>Shows the results from automated trading and plots the graph</p>
+        <!-- <div class="front-page" >
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Trade</span>
+                  <p>Trades directly with already existing historical data in the database, and shows the results. </p>
+                </div>
+                <div class="card-action">
+                  <a href="/ohlc">Trade</a>
+                  
+                </div>
+              </div>
             </div>
-            <div class="card-action">
-              <a href="/trade/">Trade</a>
-            
+          
+            <div class="col s12 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Get new historical data and trade</span>
+                  <p>Fetches new historical data based on parameters and trades.</p>
+                </div>
+                <div class="card-action">
+                  <a href="/ohlcform">Get historical data. </a>
+                  
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      
+        </div> -->
+                  
 
-      <table id="table" >
-        <thead>
-          <tr>
-            {% for header in headers %}
-            <th>{{ header }}</th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {% for t in data %}
-                            <tr>
-                                <th  scope="row">     </th>
 
-                                <td >{{t.Datetime}}</td>
-                                <td >{{t.Open}}</td>
-                                <td>{{t.High}}</td>
-                                <td >{{t.Low}}</td>
-                                <td>{{t.Close}} </td>
-                                <td>{{t.Volume}}</td>
 
-                            </tr>
-                            {% endfor %}
-          </tr>
-        </tbody>
-      </table>
-      
-      
-
-<!-- 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+  
   <footer class="page-footer blue-grey darken-4">
     <div class="container">
       <div class="row">

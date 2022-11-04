@@ -11,7 +11,7 @@ plt.rcParams['figure.figsize'] = (15, 8)
 class trader: 
     def __init__(self) -> None:
         try: 
-            df= pd.read_csv(r'automatedTrader\back-end\data\ohlc.csv')
+            df= pd.read_csv(r'C:\Users\kirti\Automated Trading_simulation\static\ohlc.csv')
         except FileNotFoundError as e: 
             raise Exception("The file could not be located") 
         self.df= df
@@ -69,15 +69,16 @@ class trader:
                 
         return buy_price, sell_price, sma_signal
 
-    def plot(self): 
-        msft= self.self.df.copy() 
-        plt.plot(msft['close'], alpha = 0.3, label = 'MSFT')
+    def plot(self, buyprice, sellprice): 
+        msft= self.df.copy() 
+        plt.plot(msft['Close'], alpha = 0.3, label = 'MSFT')
         plt.plot(msft['sma_20'], alpha = 0.6, label = 'SMA 20')
         plt.plot(msft['sma_50'] , alpha = 0.6, label = 'SMA 50')
-        plt.scatter(msft.index, msft['buy_price'], marker = '^', s = 200, color = 'darkblue', label = 'BUY SIGNAL')
-        plt.scatter(msft.index, msft['sell_price'] , marker = 'v', s = 200, color = 'crimson', label = 'SELL SIGNAL')
+        plt.scatter(msft.index, buyprice, marker = '^', s = 200, color = 'darkblue', label = 'BUY SIGNAL')
+        plt.scatter(msft.index, sellprice , marker = 'v', s = 200, color = 'crimson', label = 'SELL SIGNAL')
         plt.legend(loc = 'upper left')
         plt.title('MSFT SMA CROSSOVER TRADING SIGNALS')
+        plt.savefig("{% static 'plot.png' %}")
         plt.show()
     
     def create_position(self): 

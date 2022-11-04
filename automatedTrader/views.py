@@ -3,9 +3,12 @@ from django.shortcuts import render
 import pandas as pd
 import csv
 from .forms import InputForm
-
+import sys
+sys.path.append(r'C:\Users\kirti\Automated Trading_simulation\automatedTrader\back_end')
+from trader import trader
+  
 def index(request): 
-    return  render(request, 'index.html') 
+    return  render(request, 'index.html')   
 
 def ohlc(request): 
     csv_fp = open(f'static/ohlc.csv', 'r')
@@ -37,6 +40,14 @@ def formdata(request):
     headers = [col for col in reader.fieldnames]
     out = [row for row in reader]
     return render(request, 'ohlc.html', {'data' : out, 'headers' : headers})
+
+
+def trade(request): 
+    # obj= trader() 
+    # obj.clean_data() 
+    # buy_price, sell_price, signal = obj.strategy()
+    # obj.plot() 
+    return render(request, 'trade.html') 
 
 
 
