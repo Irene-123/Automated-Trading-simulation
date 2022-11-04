@@ -9,7 +9,7 @@ class InputForm(forms.Form):
     # timeframe = forms.ChoiceField(choices=CHOICES, widget=forms.Select())
     # startdate= forms.DateField()
     # enddate= forms.DateField()
-
+    
     
 
 

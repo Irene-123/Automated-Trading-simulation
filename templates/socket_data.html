@@ -17,7 +17,7 @@
       <nav class="nav-extended blue-grey darken-4">
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">  ETrader</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">bar</i></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
     
             <li><a href="#">Login/Signup</a></li>
@@ -28,12 +28,9 @@
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
             
-            <li class="tab"><a class="active" href="/">Home</a></li>
-            <li class="tab"><a href="/socket_data">Sockets data</a></li>
+            <li class="tab"><a href="/">Home</a></li>
+            <li class="tab"><a class="active" href="/socket_data">Sockets data</a></li>
             <li class="tab"><a href="#test1">Simulator/Backtesting</a></li>
-
-            <!-- <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
-            <li class="tab"><a href="#test4">Test 4</a></li> -->
           </ul>
         </div>
       </nav>
@@ -68,12 +65,25 @@
                             <tr>
                                 <th  scope="row">     </th>
 
-                                <td >{{t.Datetime}}</td>
-                                <td >{{t.Open}}</td>
-                                <td>{{t.High}}</td>
+                                <td >{{t.Exch}}</td>
+                                <td >{{t.ExchType}}</td>
+                                <td>{{t.Token}}</td>
+                                <td >{{t.LastRate}}</td>
+                                <td>{{t.LastQty}} </td>
+                                <td>{{t.TotalQty}}</td>
+                                <td >{{t.High}}</td>
                                 <td >{{t.Low}}</td>
-                                <td>{{t.Close}} </td>
-                                <td>{{t.Volume}}</td>
+                                <td >{{t.OpenRate}}</td>
+                                <td >{{t.PClose}}</td>
+                                <td >{{t.AvgRate}}</td>
+                                <td >{{t.Time}}</td>
+                                <td >{{t.BidQty}}</td>
+                                <td >{{t.OffQty}}</td>
+                                <td >{{t.OffRate}}</td>
+                                <td >{{t.TBidQ}}</td>
+                                <td >{{t.TOffQ}}</td>
+                                <td >{{t.TickDt}}</td>
+                                <td >{{t.chgPcnt}}</td>
 
                             </tr>
                             {% endfor %}
@@ -105,7 +115,7 @@
     <div class="footer-copyright">
       <div class="container">
         © 2022-2023 Batch UMIT Major Project
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      <a class="grey-text text-lighten-4 right" href="#">More Links</a>
       </div>
     </div>
   </footer>

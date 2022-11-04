@@ -4,8 +4,9 @@ import pandas as pd
 import csv
 from .forms import InputForm
 import sys
-sys.path.append(r'C:\Users\kirti\Automated Trading_simulation\automatedTrader\back_end')
-from trader import trader
+# sys.path.append(r'C:\Users\kirti\Automated Trading_simulation\automatedTrader\back_end')
+from automatedTrader.back_end.trader import trader
+
   
 def index(request): 
     return  render(request, 'index.html')   
@@ -40,6 +41,15 @@ def formdata(request):
     headers = [col for col in reader.fieldnames]
     out = [row for row in reader]
     return render(request, 'ohlc.html', {'data' : out, 'headers' : headers})
+
+def socket_data(request): 
+    file_path= open(f'static/socket_data.csv', 'r')
+    reader= csv.DictReader(file_path) 
+    headers= [col for col in reader.fieldnames] 
+    out= [row for row in reader] 
+    return render(request, 'socket_data.html', {'data': out, 'headers': headers} ) 
+
+
 
 
 def trade(request): 

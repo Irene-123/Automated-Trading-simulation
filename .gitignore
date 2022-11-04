@@ -1,3 +1,5 @@
 /db.sqlite3
 /venv
-/eTrader/settings.py
+eTrader/settings.py
+automatedTrader/back_end/test.ipynb
+static/socket_data.csv
