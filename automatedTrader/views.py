@@ -3,6 +3,7 @@ from django.shortcuts import render
 import pandas as pd
 import csv
 from .forms import InputForm
+from .forms import GeeksForm
 import sys
 # sys.path.append(r'C:\Users\kirti\Automated Trading_simulation\automatedTrader\back_end')
 from automatedTrader.back_end.trader import trader
@@ -53,11 +54,18 @@ def socket_data(request):
 
 
 def trade(request): 
-    # obj= trader() 
-    # obj.clean_data() 
-    # buy_price, sell_price, signal = obj.strategy()
-    # obj.plot() 
-    return render(request, 'trade.html') 
+    context ={}
+ 
+    # create object of form
+    form = GeeksForm(request.POST or None, request.FILES or None)
+     
+    # check if form data is valid
+    if form.is_valid():
+        # save the form data to model
+        form.save()
+ 
+    context['form']= form
+    return render(request, "trade.html", context)
 
 
 

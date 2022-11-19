@@ -9,6 +9,17 @@ class InputForm(forms.Form):
     # timeframe = forms.ChoiceField(choices=CHOICES, widget=forms.Select())
     # startdate= forms.DateField()
     # enddate= forms.DateField()
+
+from .models import GeeksModel
+ 
+# create a ModelForm
+class GeeksForm(forms.ModelForm):
+    # specify the name of model to use
+    class Meta:
+        model = GeeksModel
+        fields = "__all__"
+
+
     
     
 

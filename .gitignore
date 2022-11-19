@@ -3,3 +3,6 @@
 eTrader/settings.py
 automatedTrader/back_end/test.ipynb
 static/socket_data.csv
+automatedTrader/back_end/test.ipynb
+static/ohlc.csv
+automatedTrader/back_end/data/ohlc.csv
